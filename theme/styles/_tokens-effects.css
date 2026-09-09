@@ -1,0 +1,147 @@
+/* EFFECTS — Greenfield Agentic Deck System
+   The "stunning web graphics" layer. Gradient tokens + reusable helper classes
+   (prefixed .gf-) + keyframes. Built for Slidev / web slides where motion is free.
+   All helpers degrade gracefully under prefers-reduced-motion. */
+
+:root {
+  /* ---- Signature gradients ---- */
+  --grad-signal: linear-gradient(100deg, var(--green-400) 0%, var(--cyan-400) 100%);
+  --grad-orchestra: linear-gradient(120deg, var(--green-400) 0%, var(--cyan-400) 45%, var(--violet-400) 100%);
+  --grad-ember: linear-gradient(105deg, var(--amber-400) 0%, var(--green-400) 100%);
+  --grad-ink-fade: linear-gradient(180deg, rgba(7, 8, 11, 0) 0%, var(--ink-950) 88%);
+  --grad-stage: radial-gradient(120% 90% at 50% -10%, #0E141A 0%, var(--ink-950) 60%);
+
+  /* line/dot field tuning */
+  --field-size: 38px;
+  --field-line: rgba(255, 255, 255, 0.045);
+  --field-dot: rgba(37, 224, 124, 0.18);
+}
+
+/* ============ BACKGROUND FIELDS ============ */
+
+/* Engineering grid — fine lines, slow drift. Pair with .gf-stage. */
+.gf-grid {
+  background-image:
+    linear-gradient(var(--field-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--field-line) 1px, transparent 1px);
+  background-size: var(--field-size) var(--field-size);
+  animation: gf-pan 28s linear infinite;
+}
+
+/* Dot matrix — agent lattice. */
+.gf-dots {
+  background-image: radial-gradient(var(--field-dot) 1.4px, transparent 1.6px);
+  background-size: var(--field-size) var(--field-size);
+}
+
+/* Stage backdrop — deep radial vignette, the default slide canvas. */
+.gf-stage {
+  background: var(--grad-stage);
+  background-color: var(--ink-950);
+}
+
+/* Aurora — soft drifting accent blobs behind content. Put on an absolute layer. */
+.gf-aurora {
+  position: absolute;
+  inset: -20%;
+  filter: blur(80px);
+  opacity: 0.6;
+  background:
+    radial-gradient(38% 44% at 18% 22%, rgba(37, 224, 124, 0.45), transparent 70%),
+    radial-gradient(34% 40% at 82% 28%, rgba(31, 192, 236, 0.4), transparent 70%),
+    radial-gradient(40% 46% at 60% 88%, rgba(139, 92, 246, 0.38), transparent 72%);
+  animation: gf-drift 22s var(--ease-in-out) infinite alternate;
+  pointer-events: none;
+}
+
+/* Film grain — texture overlay (fractal noise data URI). Set on an inset layer. */
+.gf-grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.5;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Scanline sweep — a single highlight bar travelling down. */
+.gf-scan {
+  position: relative;
+  overflow: hidden;
+}
+.gf-scan::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 38%;
+  top: -40%;
+  background: linear-gradient(180deg, transparent, rgba(37, 224, 124, 0.08), transparent);
+  animation: gf-sweep 4.5s var(--ease-in-out) infinite;
+  pointer-events: none;
+}
+
+/* ============ TEXT TREATMENTS ============ */
+
+.gf-gradient-text {
+  background: var(--grad-signal);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.gf-gradient-text.is-orchestra { background: var(--grad-orchestra); -webkit-background-clip: text; background-clip: text; }
+.gf-gradient-text.is-ember { background: var(--grad-ember); -webkit-background-clip: text; background-clip: text; }
+
+.gf-glow-text { text-shadow: 0 0 24px rgba(37, 224, 124, 0.55); }
+
+/* Eyebrow / kicker — mono uppercase label with a leading tick. */
+.gf-eyebrow {
+  font-family: var(--font-mono);
+  font-size: var(--t-micro);
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+/* ============ EDGES & EMISSION ============ */
+
+.gf-glow { box-shadow: var(--glow-green); }
+.gf-glow-cyan { box-shadow: var(--glow-cyan); }
+.gf-glow-violet { box-shadow: var(--glow-violet); }
+
+/* Gradient hairline border via mask (no extra DOM). */
+.gf-border-gradient {
+  position: relative;
+}
+.gf-border-gradient::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: var(--grad-orchestra);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+/* ============ KEYFRAMES ============ */
+@keyframes gf-pan { to { background-position: var(--field-size) var(--field-size); } }
+@keyframes gf-drift {
+  0%   { transform: translate3d(0, 0, 0) scale(1); }
+  100% { transform: translate3d(4%, -3%, 0) scale(1.12); }
+}
+@keyframes gf-sweep { 0% { top: -40%; } 60%, 100% { top: 120%; } }
+@keyframes gf-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+@keyframes gf-pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.45; } }
+@keyframes gf-flicker { 0%, 100% { opacity: 1; } 92% { opacity: 1; } 94% { opacity: 0.4; } 96% { opacity: 1; } }
+@keyframes gf-dash { to { stroke-dashoffset: -1000; } }
+@keyframes gf-rise { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes gf-spin { to { transform: rotate(360deg); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .gf-grid, .gf-aurora, .gf-scan::before { animation: none !important; }
+}

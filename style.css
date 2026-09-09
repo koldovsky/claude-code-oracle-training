@@ -1,0 +1,94 @@
+/* Deck-wide helper classes (global). Slidev auto-loads ./style.css for every slide.
+   Per-slide  blocks in markdown are SCOPED to their slide, so anything reused across slides lives here.
+   Never put an angle bracket inside a style block in slides.md. */
+
+.fig { background:#fff; border-radius:14px; box-shadow:0 18px 50px rgba(0,0,0,.45); display:block; width:auto !important; height:auto !important; max-width:100%; max-height:400px; align-self:center; margin-left:auto; margin-right:auto; }
+.fig-dark { background:transparent; box-shadow:none; }
+/* Source line: pinned just above the bottom chrome so it never pushes content; content must end above ~y=640. */
+.src-note { position:absolute; left:var(--slide-pad-x); right:var(--slide-pad-x); bottom:58px; margin:0 !important; font-family:var(--font-mono); font-size:11px; line-height:1.35; color:var(--fg-3); letter-spacing:.03em; }
+.src-note.inline { position:static; }
+.src-note a { color:var(--fg-2); }
+.lead { font-size:20px; max-width:60ch; }
+.codeline { font-family:var(--font-mono); font-size:13px; background:var(--ink-900); border:1px solid var(--border-default); border-radius:8px; padding:8px 11px; margin:.45em 0; color:var(--fg-1); }
+.card { background:var(--ink-850); border:1px solid var(--border-subtle); border-radius:16px; padding:18px 20px; }
+.card.hot { border-color:var(--border-accent); box-shadow:var(--glow-green-soft); }
+.card.warn { border-color:rgba(245,166,35,.45); }
+.card.bad { border-color:rgba(244,71,95,.4); }
+.card p { margin:0; }
+.card p + p { margin-top:.5em; }
+.callout { border-left:3px solid var(--green-400); padding:6px 0 6px 20px; font-family:var(--font-display); font-size:24px; line-height:1.3; color:var(--fg-0); letter-spacing:-.01em; }
+.callout.amber { border-color:var(--amber-400); }
+.kick { font-family:var(--font-mono); font-size:12px; letter-spacing:.09em; text-transform:uppercase; color:var(--fg-3); margin-bottom:6px; }
+.kick.green { color:var(--green-400); } .kick.cyan { color:var(--cyan-400); } .kick.violet { color:var(--violet-400); } .kick.amber { color:var(--amber-400); } .kick.rose { color:var(--rose-400); }
+.day-jump-wrap a { display:inline-flex; align-items:center; gap:8px; padding:9px 18px; border:1px solid var(--border-accent); border-radius:10px; font-family:var(--font-mono); font-size:14px; color:var(--green-400); text-decoration:none; }
+.day-jump-wrap a:hover { background:var(--tint-cyan); }
+/* pills / chips */
+.pill { display:inline-flex; align-items:center; gap:8px; font-family:var(--font-mono); font-size:13px; padding:5px 12px; border-radius:999px; border:1px solid var(--border-default); color:var(--fg-1); background:rgba(255,255,255,.03); white-space:nowrap; }
+.pill.green { border-color:var(--border-accent); color:var(--green-400); background:var(--tint-green); }
+.pill.cyan { border-color:rgba(31,192,236,.4); color:var(--cyan-400); background:var(--tint-cyan); }
+.pill.violet { border-color:rgba(139,92,246,.45); color:var(--violet-400); background:var(--tint-violet); }
+.pill.amber { border-color:rgba(245,166,35,.45); color:var(--amber-400); background:var(--tint-amber); }
+.pill.rose { border-color:rgba(244,71,95,.45); color:var(--rose-400); background:var(--tint-rose); }
+.chips { display:flex; flex-wrap:wrap; gap:8px; }
+/* comparison table */
+.cmp { display:grid; border:1px solid var(--border-subtle); border-radius:12px; overflow:hidden; font-size:15px; }
+.cmp .row { display:grid; grid-template-columns:1.1fr 1fr 1fr 1fr; border-top:1px solid var(--border-subtle); }
+.cmp .row:first-child { border-top:none; }
+.cmp.c3 .row { grid-template-columns:1.1fr 1fr 1fr; }
+.cmp.c2 .row { grid-template-columns:1fr 1fr; }
+.cmp .c { padding:9px 13px; border-left:1px solid var(--border-subtle); color:var(--fg-1); line-height:1.4; }
+.cmp .c:first-child { border-left:none; color:var(--fg-2); font-family:var(--font-mono); font-size:12.5px; }
+.cmp .head .c { background:rgba(255,255,255,.03); font-family:var(--font-display); color:var(--fg-0); font-size:15px; font-weight:600; }
+.cmp .head .c.bad { color:var(--rose-400); } .cmp .head .c.mid { color:var(--amber-400); } .cmp .head .c.good { color:var(--green-400); }
+.cmp .c small { color:var(--fg-2); font-size:13px; }
+/* ladder (trust levels) */
+.ladder { display:grid; grid-template-columns:repeat(5,1fr); gap:10px; }
+.ladder.l6 { grid-template-columns:repeat(6,1fr); }
+.rung { background:var(--ink-850); border:1px solid var(--border-subtle); border-radius:12px; padding:14px 13px; }
+.rung .s { font-family:var(--font-mono); font-size:12px; color:var(--fg-3); }
+.rung .nm { font-family:var(--font-display); font-weight:600; font-size:17px; color:var(--fg-0); margin:4px 0 6px; letter-spacing:-.01em; }
+.rung p { font-size:13px; color:var(--fg-2); line-height:1.4; margin:0; }
+.rung .bar { height:4px; border-radius:3px; margin-top:12px; background:var(--green-400); }
+.rung:nth-child(1) .bar { opacity:.24 } .rung:nth-child(2) .bar { opacity:.42 } .rung:nth-child(3) .bar { opacity:.6 } .rung:nth-child(4) .bar { opacity:.78 } .rung:nth-child(5) .bar { opacity:.9 }
+.rung.on { border-color:var(--border-accent); box-shadow:var(--glow-green-soft); }
+.rung.on .bar { opacity:1; box-shadow:0 0 12px var(--green-400); }
+/* horizontal stepper */
+.flow { position:relative; display:grid; grid-template-columns:repeat(5,1fr); gap:12px; margin-top:6px; }
+.flow.f4 { grid-template-columns:repeat(4,1fr); } .flow.f6 { grid-template-columns:repeat(6,1fr); } .flow.f7 { grid-template-columns:repeat(7,1fr); }
+.flow::before { content:""; position:absolute; left:9%; right:9%; top:9px; height:3px; background:var(--grad-orchestra); opacity:.6; }
+.fn { position:relative; text-align:center; }
+.fn .dot { width:20px; height:20px; border-radius:50%; background:var(--ink-850); border:3px solid var(--green-600); margin:0 auto 12px; }
+.fn.on .dot { background:var(--green-400); border-color:var(--green-400); box-shadow:0 0 16px var(--green-400); }
+.fn .t { font-family:var(--font-display); font-weight:600; font-size:18px; color:var(--fg-0); }
+.fn .s { font-size:13px; color:var(--fg-2); margin-top:3px; }
+/* rich terminal mock (raw HTML alternative to the GfTerminal component) */
+.term { background:var(--ink-900); border:1px solid var(--border-default); border-radius:12px; overflow:hidden; font-family:var(--font-mono); font-size:14px; box-shadow:var(--shadow-lg); }
+.term .bar { display:flex; gap:7px; align-items:center; padding:9px 13px; border-bottom:1px solid var(--border-subtle); background:var(--ink-850); }
+.term .bar i { width:10px; height:10px; border-radius:50%; display:inline-block; }
+.term .bar .r { background:#FF5F57 } .term .bar .y { background:#FEBC2E } .term .bar .g { background:#28C840 }
+.term .bar span { margin-left:8px; color:var(--fg-3); font-size:12px; letter-spacing:.03em; }
+.term .body { padding:12px 15px; line-height:1.75; color:var(--fg-1); white-space:pre-wrap; }
+/* Live sessions: dragging over a terminal block must yield a runnable command, so the
+   decorations (shell/agent prompt, comments, simulated output) are excluded from selection.
+   The chrome bar is excluded too. Deck-wide text selection is on via `selectable: true`. */
+.term .bar, .term .m, .term .dim, .term .ok, .term .am, .term .rs { user-select:none; -webkit-user-select:none; }
+/* …and they must not swallow the mousedown either: a drag that starts on the $ glyph would
+   otherwise select nothing at all. With pointer-events off the press lands on .body. */
+.term .m, .term .dim, .term .ok, .term .am, .term .rs { pointer-events:none; }
+/* `.m` is the prompt glyph itself ($ / ›). .pr .cy .vi without it are ordinary syntax
+   highlighting inside file previews and stay selectable; .ok .am .rs are simulated status. */
+.term .body { cursor:text; }
+.term .pr { color:var(--green-400) } .term .ok { color:var(--green-300) } .term .dim { color:var(--fg-3) } .term .cy { color:var(--cyan-300) } .term .vi { color:var(--violet-300) } .term .rs { color:var(--rose-400) } .term .am { color:var(--amber-300) }
+/* stat tile (raw HTML alternative to the GfStat component) */
+.stat .v { font-family:var(--font-display); font-weight:700; font-size:52px; line-height:1; letter-spacing:-.03em; color:var(--fg-0); }
+.stat .v.g { background:var(--grad-signal); -webkit-background-clip:text; background-clip:text; color:transparent; }
+.stat .l { font-family:var(--font-mono); font-size:12px; letter-spacing:.05em; text-transform:uppercase; color:var(--fg-2); margin-top:8px; }
+.stat .s { font-size:13px; color:var(--fg-3); margin-top:3px; }
+/* misc */
+.tight p, .tight li { font-size:16px; }
+.tight ul { gap:.35em; }
+.kbd { font-family:var(--font-mono); font-size:13px; background:var(--ink-700); border:1px solid var(--border-default); border-bottom-width:2px; border-radius:6px; padding:1px 7px; color:var(--fg-1); }
+
+/* Прибираємо службовий діалог "перейти до слайда": на живому занятті він
+   лише заважає — відкривається клавішею g і накриває праву третину слайда. */
+#slidev-goto-dialog { display: none !important; }

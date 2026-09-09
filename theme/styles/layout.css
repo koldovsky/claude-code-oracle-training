@@ -1,0 +1,98 @@
+/* Greenfield Slidev theme — layout + element base.
+   Scoped under .slidev-layout where possible so styles don't leak into the
+   presenter UI. The animated stage lives in global-bottom.vue (behind slides). */
+
+/* The deck canvas itself is transparent so the global stage shows through. */
+.slidev-layout {
+  font-family: var(--font-sans);
+  background: transparent;
+  color: var(--text-body);
+  padding: var(--slide-pad-y) var(--slide-pad-x);
+  font-size: 20px;
+  line-height: var(--lh-normal);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Letterbox area around the scaled slide → deep ink, not white. */
+#slide-content,
+.slidev-page {
+  background: var(--ink-950);
+}
+
+/* ---- Headings ---- */
+.slidev-layout h1 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 72px;
+  line-height: 1.0;
+  letter-spacing: -0.035em;
+  color: var(--fg-0);
+  margin: 0 0 0.3em;
+}
+.slidev-layout h2 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  color: var(--fg-0);
+  margin: 0 0 0.4em;
+}
+.slidev-layout h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 26px;
+  letter-spacing: -0.02em;
+  color: var(--fg-0);
+  margin: 0 0 0.4em;
+}
+
+.slidev-layout p,
+.slidev-layout li {
+  font-size: 20px;
+  color: var(--fg-1);
+  line-height: 1.5;
+}
+.slidev-layout p { margin: 0 0 0.7em; }
+
+.slidev-layout strong { color: var(--fg-0); font-weight: 600; }
+.slidev-layout em { font-style: normal; color: var(--green-400); }
+.slidev-layout a { color: var(--green-400); text-decoration: none; border-bottom: 1px solid var(--border-accent); }
+
+/* ---- Lists with signal-green markers ---- */
+.slidev-layout ul { list-style: none; padding: 0; margin: 0.4em 0; display: flex; flex-direction: column; gap: 0.6em; }
+.slidev-layout ul > li { position: relative; padding-left: 1.6em; }
+.slidev-layout ul > li::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 0.62em;
+  width: 0.5em; height: 0.5em;
+  border-radius: 2px;
+  background: var(--grad-signal);
+}
+
+/* ---- Inline code & code blocks ---- */
+.slidev-layout code { font-family: var(--font-mono); font-size: 0.9em; color: var(--cyan-300); background: var(--tint-cyan); padding: 0.1em 0.4em; border-radius: var(--radius-xs); }
+.slidev-layout pre {
+  font-family: var(--font-mono);
+  background: var(--ink-900) !important;
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  padding: 20px 22px !important;
+  box-shadow: var(--shadow-lg);
+  font-size: 15px;
+  line-height: 1.7;
+}
+.slidev-layout pre code { background: transparent; color: var(--fg-1); padding: 0; }
+
+/* ---- Utility classes (use in markdown) ---- */
+.grad { background: var(--grad-signal); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.grad-orchestra { background: var(--grad-orchestra); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.grad-ember { background: var(--grad-ember); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.glow-text { text-shadow: 0 0 24px rgba(37, 224, 124, 0.55); }
+.muted { color: var(--fg-2); }
+.faint { color: var(--fg-3); }
+.mono { font-family: var(--font-mono); }
+
+/* ---- Selection / scrollbar consistency ---- */
+::selection { background: rgba(37, 224, 124, 0.3); color: var(--fg-0); }

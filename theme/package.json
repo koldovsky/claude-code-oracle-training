@@ -1,0 +1,35 @@
+{
+  "name": "slidev-theme-greenfield",
+  "version": "1.0.0",
+  "description": "Dark technical Slidev theme.",
+  "keywords": [
+    "slidev-theme",
+    "slidev",
+    "greenfield",
+    "agentic",
+    "dark"
+  ],
+  "license": "MIT",
+  "engines": {
+    "slidev": ">=0.48.0"
+  },
+  "slidev": {
+    "colorSchema": "dark",
+    "highlighter": "shiki",
+    "defaults": {
+      "aspectRatio": "16/9",
+      "canvasWidth": 1280,
+      "fonts": {
+        "sans": "Geist",
+        "mono": "Geist Mono",
+        "weights": "300,400,500,600,700",
+        "display": "Space Grotesk"
+      }
+    }
+  },
+  "scripts": {
+    "dev": "slidev example.md",
+    "build": "slidev build example.md",
+    "export": "slidev export example.md"
+  }
+}

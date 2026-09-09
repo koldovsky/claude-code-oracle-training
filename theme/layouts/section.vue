@@ -1,0 +1,16 @@
+<!-- Greenfield section / big-statement slide. Vertically centered, left aligned. -->
+<template>
+  <div class="slidev-layout gf-section">
+    <div class="gf-section-inner">
+      <slot />
+    </div>
+  </div>
+</template>
+
+<style>
+.gf-section { display: flex; align-items: center; }
+.gf-section-inner { max-width: 980px; }
+.gf-section-inner h1 { font-size: 72px; text-wrap: balance; }
+.gf-section-inner h2 { font-size: 60px; text-wrap: balance; }
+.gf-section-inner p { font-size: 21px; color: var(--fg-2); margin-top: 1.2em; }
+</style>
