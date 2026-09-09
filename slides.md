@@ -22,7 +22,7 @@ selectable: true
 
 <div class="day-jump-wrap flex gap-3 flex-wrap" style="margin-top:1.5em">
 <a href="https://koldovsky.github.io/claude-code-oracle-training/cheatsheet.html" target="_blank">Шпаргалка з усіма командами →</a>
-<a href="https://github.com/koldovsky/acordbank-oracle-training" target="_blank">Репозиторій курсу →</a>
+<a href="https://github.com/koldovsky/oracle-claude-training-materials" target="_blank">Репозиторій курсу →</a>
 </div>
 
 <!--
@@ -623,6 +623,6 @@ skills · subagents · hooks · spec-driven development</p>
 
 <div class="day-jump-wrap flex gap-3 flex-wrap" style="margin-top:1.6em">
 <a href="https://koldovsky.github.io/claude-code-oracle-training/cheatsheet.html" target="_blank">Шпаргалка →</a>
-<a href="https://github.com/koldovsky/acordbank-oracle-training" target="_blank">Репозиторій →</a>
-<a href="https://github.com/koldovsky/acordbank-oracle-training/blob/main/training/HANDOUT-SESSION-1.md" target="_blank">Робочий листок →</a>
+<a href="https://github.com/koldovsky/oracle-claude-training-materials" target="_blank">Репозиторій →</a>
+<a href="https://github.com/koldovsky/oracle-claude-training-materials/blob/main/training/HANDOUT-SESSION-1.md" target="_blank">Робочий листок →</a>
 </div>

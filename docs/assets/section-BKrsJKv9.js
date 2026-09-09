@@ -1,1 +1,0 @@
-import{o as s,e as o,g as t,i as a}from"./modules/vue-DAwGnX9-.js";import{u as n}from"./slidev/context-VJ90ARpb.js";const c={class:"slidev-layout gf-section"},r={class:"gf-section-inner"},m={__name:"section",setup(i){return n(),(e,_)=>(s(),o("div",c,[t("div",r,[a(e.$slots,"default")])]))}};export{m as _};
