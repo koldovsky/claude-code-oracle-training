@@ -1,0 +1,22 @@
+{
+  "session-2-lesson-uk.mp4": {
+    "bytes": 55197005,
+    "sha256": "bb3ae75987bd6a30d72500eae090e9e5c9b0f9b8c1f90dc594fb9c6a541d06a9"
+  },
+  "session-2-lesson-uk.srt": {
+    "bytes": 178655,
+    "sha256": "5d0a8902388a8a08558d9a9cc53d940ccfab80e555c866b6eaf6621d351359bc"
+  },
+  "session-2-lesson-uk.vtt": {
+    "bytes": 172194,
+    "sha256": "725927c9fcb68368669de791e1a5183da246ae96d981f0db4ef6750d4e52a0d5"
+  },
+  "session-2-lesson-transcript.md": {
+    "bytes": 136262,
+    "sha256": "e660a03445c86aa02bbdeac039e3214788c089b8657811938a141e5d66bd89ac"
+  },
+  "session-2-video-poster.png": {
+    "bytes": 54823,
+    "sha256": "67dad1c81f4e9c6bdecf33ba68a907060649750c435e415889bacd6638c6b0e9"
+  }
+}

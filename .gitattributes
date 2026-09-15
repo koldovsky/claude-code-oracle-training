@@ -1,0 +1,2 @@
+# Preserve the verified downloadable bytes and their published SHA-256 hashes.
+docs/session-2-video-media/* -text whitespace=cr-at-eol

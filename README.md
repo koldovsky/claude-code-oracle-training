@@ -4,6 +4,9 @@
 
 | | |
 |---|---|
+| **Сесія 2: початок і всі завантаження** | https://koldovsky.github.io/claude-code-oracle-training/session-2.html |
+| **Відеоурок українською · 2 години** | https://koldovsky.github.io/claude-code-oracle-training/session-2-video.html |
+| **Слайди Сесії 2** | https://koldovsky.github.io/claude-code-oracle-training/session-2-slides.html |
 | **Слайди** | https://koldovsky.github.io/claude-code-oracle-training/ |
 | **Шпаргалка** | https://koldovsky.github.io/claude-code-oracle-training/cheatsheet.html |
 | **Шпаргалка Сесії 2** | https://koldovsky.github.io/claude-code-oracle-training/cheatsheet-session-2.html |
