@@ -1,11 +1,13 @@
 # Claude Code для Oracle-розробки
 
-Слайди й шпаргалка практичного курсу.
+Слайди, шпаргалки й самостійний практичний урок із записами демонстрацій.
 
 | | |
 |---|---|
 | **Слайди** | https://koldovsky.github.io/claude-code-oracle-training/ |
 | **Шпаргалка** | https://koldovsky.github.io/claude-code-oracle-training/cheatsheet.html |
+| **Шпаргалка Сесії 2** | https://koldovsky.github.io/claude-code-oracle-training/cheatsheet-session-2.html |
+| **Самостійний урок Сесії 2** | https://koldovsky.github.io/claude-code-oracle-training/session-2-rehearsal.html |
 
 ## Про курс
 
@@ -18,6 +20,19 @@ Claude Code так, щоб він був корисним на великій с
 Дві вправи руками, обидві з перевіркою результату проти незалежного джерела.
 
 **Сесія 2** — skills, subagents, hooks, spec-driven development.
+
+## Самостійний урок Сесії 2
+
+Сторінка містить пояснення, повний контракт вправи, дев'ять реальних записів,
+практичні завдання, відповіді й довідковий код у блоках, які можна згортати.
+Файли лабораторії можна завантажити безпосередньо зі сторінки. Для читання
+та перегляду записів не потрібні слайди, шпаргалка або підключення до Oracle.
+Для власної практики потрібні інструменти й навчальний обліковий запис,
+описані в блоці підготовки.
+
+Джерела уроку й генератор:
+[навчальний репозиторій](https://github.com/koldovsky/oracle-claude-training-materials/tree/main/training/session-2/recording).
+У `docs/` зберігаються готові HTML і очищені дані; сирі журнали запису сюди не входять.
 
 ## Шпаргалка
 
